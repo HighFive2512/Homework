@@ -10,29 +10,33 @@ def merge(string,parameters):
     combined = ''.join(combined)
     asd = string[0:param1] + [combined] + string[param2:]
     return asd
-def divide(string,parameters):
+
+
+def divide(string, parameters):
     param1, param2 = parameters
     param1 = int(param1)
     param2 = int(param2)
-    while True:
-        selected_string = string[param1]
-        tempolist = []
-        selected_index = string.index(selected_string)
-        previndex = 0
-        divide_by = len(string) // param2
-        for each_index in range(2,len(selected_string),1+divide_by):
-            if each_index+1 == param2+1:
-                if len(selected_string) % 2 == 1:
-                    tempolist[previndex] = selected_string[previndex:each_index+1]
-                else:
-                    tempolist[-1] = selected_string[previndex:each_index]
-            tempolist.append(selected_string[previndex:each_index])
-            previndex = each_index
-        break
-    string.pop(selected_index)
+
+    # Check if param1 and param2 are valid indices
+    if param1 >= len(string) or param2 >= len(string):
+        return string
+
+    selected_string = string[param1]
+    tempolist = []
+    divide_by = len(selected_string) // param2
+
+    for each_index in range(0, len(selected_string), divide_by):
+        tempolist.append(selected_string[each_index:each_index + divide_by])
+
+    # Remove the selected string
+    string.pop(param1)
+
+    # Insert the divided parts back into the list
     for i in range(len(tempolist)):
-        string.insert(selected_index+i,tempolist[i])
+        string.insert(param1 + i, tempolist[i])
+
     return string
+
 
 fullstring = [x for x in input().split(" ")]
 while True:
