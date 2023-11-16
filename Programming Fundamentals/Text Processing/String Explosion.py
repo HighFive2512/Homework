@@ -1,20 +1,17 @@
 uinput = input()
+expl_amount = 0
+eachchar = 0
 result = ""
-current_indx = 0
-xplode = 0
-while current_indx in range(len(uinput)):
-
-    if uinput[current_indx] == ">":
-        xplode = int(uinput[current_indx+1])
+while eachchar in range(len(uinput)):
+    currentchar = uinput[eachchar]
+    if expl_amount > 0 and currentchar != ">":
+        expl_amount -= 1
+        eachchar+=1
+    elif currentchar == ">":
+        expl_amount += int(uinput[eachchar+1])
+        result += currentchar
+        eachchar+=1
     else:
-        result += uinput[current_indx]
-        current_indx += 2
-    else:
-        if current_indx + 1 > len(uinput):
-            break
-        print(current_indx+1)
-        if uinput[current_indx +1] != ">":
-            current_indx += xplode
-        result += uinput[current_indx]
-        current_indx += 1
+        result += currentchar
+        eachchar+=1
 print(result)
