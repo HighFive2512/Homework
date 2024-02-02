@@ -7,7 +7,7 @@ total_orders = len(orders)
 
 iter = 0
 while iter < total_orders:
-    if total_food_qty - int(orders[0]) >= 0:
+    if total_food_qty - int(orders[0]) >= 0 and len(orders) > 0:
         total_food_qty -= int(orders[0])
         orders.pop(0)
         iter += 1
