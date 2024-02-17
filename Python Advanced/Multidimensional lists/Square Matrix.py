@@ -1,5 +1,5 @@
 r, c = [int(el) for el in input().split()]
-matrix = [input().split() for _ in range(r)]  # [[B, B, B],...]
+matrix = [input().split() for _ in range(r)]
 
 res = 0
 

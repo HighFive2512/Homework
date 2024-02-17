@@ -1,0 +1,1 @@
+print([x for x in "sometest" if x == "e" else -1])
