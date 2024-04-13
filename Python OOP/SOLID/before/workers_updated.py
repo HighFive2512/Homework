@@ -1,6 +1,7 @@
 from abc import ABCMeta, abstractmethod
 import time
 
+
 class AbstractWorker:
     __metaclass__ = ABCMeta
 
@@ -12,6 +13,7 @@ class AbstractWorker:
     def eat(self):
         pass
 
+
 class Worker(AbstractWorker):
 
     def work(self):
@@ -20,6 +22,7 @@ class Worker(AbstractWorker):
     def eat(self):
         print("Lunch break....(5 secs)")
         time.sleep(5)
+
 
 class SuperWorker(AbstractWorker):
 
@@ -37,7 +40,9 @@ class Manager:
         self.worker = None
 
     def set_worker(self, worker):
-        assert isinstance(worker, AbstractWorker), "`worker` must be of type {}".format(AbstractWorker)
+        assert isinstance(worker, AbstractWorker), "`worker` must be of type {}".format(
+            AbstractWorker
+        )
 
         self.worker = worker
 
@@ -46,6 +51,7 @@ class Manager:
 
     def lunch_break(self):
         self.worker.eat()
+
 
 class Robot(AbstractWorker):
 

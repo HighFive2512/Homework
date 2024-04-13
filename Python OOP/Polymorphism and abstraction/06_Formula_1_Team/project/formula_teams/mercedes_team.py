@@ -14,7 +14,7 @@ class MercedesTeam(FormulaTeam):
             "TeamViewer": {
                 5: 100_000,
                 7: 50_000,
-            }
+            },
         }
 
     @property

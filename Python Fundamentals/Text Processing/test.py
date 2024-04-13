@@ -4,13 +4,15 @@ cur_str = ""
 tempstr = ""
 numbers = ""
 
+
 def checkifnum(number):
     if number.isdigit():
         return number
 
+
 while position < len(uinput):
     if uinput[position].isdigit():
-        for eachnum in range(position,len(uinput)):
+        for eachnum in range(position, len(uinput)):
             if checkifnum(uinput[eachnum]):
                 numbers += checkifnum(uinput[eachnum])
             else:
@@ -24,5 +26,5 @@ while position < len(uinput):
         position += 1
 
 unique_symbols_count = len(set(tempstr.upper()))
-print(f'Unique symbols used: {unique_symbols_count}')
+print(f"Unique symbols used: {unique_symbols_count}")
 print(tempstr)

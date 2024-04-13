@@ -28,7 +28,7 @@ class TestCat(TestCase):
         with self.assertRaises(Exception) as ex:
             self.cat.eat()
 
-        self.assertEqual('Already fed.', str(ex.exception))
+        self.assertEqual("Already fed.", str(ex.exception))
 
     def test_sleepy_cat_sleeps_and_its_not_sleepy_after_that(self):
         self.cat.sleepy = True
@@ -44,7 +44,7 @@ class TestCat(TestCase):
         with self.assertRaises(Exception) as ex:
             self.cat.sleep()
 
-        self.assertEqual('Cannot sleep while hungry', str(ex.exception))
+        self.assertEqual("Cannot sleep while hungry", str(ex.exception))
 
 
 if __name__ == "__main__":

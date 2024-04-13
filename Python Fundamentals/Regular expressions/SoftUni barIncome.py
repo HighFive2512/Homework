@@ -9,11 +9,14 @@ while True:
         print(f'Total income: {"{:.2f}".format(totalamount)}')
         break
 
-    match = re.match(r'%([A-Za-z]+)%[^\|\.\$\%]*?<([A-Za-z]+)>[^\|\.\$\%]*?\|([0-9]+)\|[\w\-]*?([0-9.]+[0-9])\$', user_input)
+    match = re.match(
+        r"%([A-Za-z]+)%[^\|\.\$\%]*?<([A-Za-z]+)>[^\|\.\$\%]*?\|([0-9]+)\|[\w\-]*?([0-9.]+[0-9])\$",
+        user_input,
+    )
 
     if match:
         customer, product, count, price = match.groups()
-        if 'invalid' in customer.lower() or 'invalid' in product.lower():
+        if "invalid" in customer.lower() or "invalid" in product.lower():
             continue
 
         count, price = int(count), float(price)

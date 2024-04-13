@@ -7,7 +7,7 @@ output_file = r"C:\temp\aaa2.txt"
 headers = {
     "Authorization": "Basic aGlnaGZpdmUyNTEyQHlhaG9vLmNvbTpBVEFUVDN4RmZHRjBuWTBrSnNZb2liRHllNG54T2pzajIzaDNJT0thZEhLU212dWxzemM5T0xnY1FHbmFiV1RxMmRzSVR3SlJuX0puWG41SHlhSklPTlZUTVRKYWY1cksxTmxfeXZRRjVLdGtFSXpnVkUxTVc4VnhkZjNLZzF4MGI0YnBuTVZ4VFI2LThaSjQ4VThaMG8yN0JDLWNoUXh5dHBfUTEteURjQTRFRXVqWmd2eVFTSUk9M0VEQzNCREM=",
     "Accept": "application/json",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
 }
 
 # Perform GET request to retrieve information with ?expand=body.view

@@ -1,5 +1,8 @@
 def check_indices_valid(indc):
-    return {indc[0], indc[2]}.issubset(valid_rows) and {indc[1], indc[3]}.issubset(valid_cols)
+    return {indc[0], indc[2]}.issubset(valid_rows) and {indc[1], indc[3]}.issubset(
+        valid_cols
+    )
+
 
 def swap_elements(command, indices):
     if len(indices) == 4 and check_indices_valid(indices) and command == "swap":

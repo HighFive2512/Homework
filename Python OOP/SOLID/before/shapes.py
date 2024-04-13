@@ -4,6 +4,7 @@ class Rectangle:
         self.width = width
         self.height = height
 
+
 class AreaCalculator:
 
     def __init__(self, shapes):

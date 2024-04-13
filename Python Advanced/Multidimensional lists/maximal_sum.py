@@ -6,9 +6,9 @@ biggest_matrix = []
 
 for row in range(r - 2):
     for col in range(c - 2):
-        first_row = mxt[row][col:col + 3]
-        second_row = mxt[row + 1][col:col + 3]
-        third_row = mxt[row + 2][col:col + 3]
+        first_row = mxt[row][col : col + 3]
+        second_row = mxt[row + 1][col : col + 3]
+        third_row = mxt[row + 2][col : col + 3]
 
         current_sum = sum(first_row) + sum(second_row) + sum(third_row)
 

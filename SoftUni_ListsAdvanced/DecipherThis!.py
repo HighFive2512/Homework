@@ -15,7 +15,7 @@ def secret_message(words):
                 chrconv = int(chrconv)
                 word_list.insert(0, chr(chrconv))
                 flag = "n"
-                word_list[1],word_list[-1] = word_list[-1],word_list[1]
+                word_list[1], word_list[-1] = word_list[-1], word_list[1]
                 i += 1
             elif flag == "n":
                 i += 1
@@ -26,5 +26,5 @@ def secret_message(words):
 
 wordstriung = input()
 res = secret_message(wordstriung)
-res = ' '.join([''.join(word) for word in res])
+res = " ".join(["".join(word) for word in res])
 print(res)

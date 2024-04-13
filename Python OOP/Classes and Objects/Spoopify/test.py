@@ -89,7 +89,9 @@ class SongTest(unittest.TestCase):
         song = Song("Scavenger of Human Sorrow", 6.56, False)
         album.add_song(song)
         message = album.details().strip()
-        expected = "Album The Sound of Perseverance\n== Scavenger of Human Sorrow - 6.56"
+        expected = (
+            "Album The Sound of Perseverance\n== Scavenger of Human Sorrow - 6.56"
+        )
 
     def test_init(self):
         band = Band("Death")
@@ -143,5 +145,5 @@ class SongTest(unittest.TestCase):
         self.assertEqual(message, expected)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

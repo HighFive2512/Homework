@@ -32,4 +32,3 @@ class Hen(Bird):
     @staticmethod
     def make_sound() -> str:
         return "Cluck"
-

@@ -8,7 +8,7 @@ class Cat:
 
     def eat(self):
         if self.fed:
-            raise Exception('Already fed.')
+            raise Exception("Already fed.")
 
         self.fed = True
         self.sleepy = True
@@ -16,6 +16,6 @@ class Cat:
 
     def sleep(self):
         if not self.fed:
-            raise Exception('Cannot sleep while hungry')
+            raise Exception("Cannot sleep while hungry")
 
         self.sleepy = False

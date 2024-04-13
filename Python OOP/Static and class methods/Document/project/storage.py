@@ -31,7 +31,9 @@ class Storage:
         document = next(filter(lambda d: d.id == document_id, self.documents))
         document.edit(new_file_name)
 
-    def edit_topic(self, topic_id: int, new_topic: str, new_storage_folder: str) -> None:
+    def edit_topic(
+        self, topic_id: int, new_topic: str, new_storage_folder: str
+    ) -> None:
         topic = next(filter(lambda t: t.id == topic_id, self.topics))
         topic.edit(new_topic, new_storage_folder)
 

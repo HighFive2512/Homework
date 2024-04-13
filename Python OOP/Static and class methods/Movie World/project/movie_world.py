@@ -55,7 +55,9 @@ class MovieWorld:
         return f"{customer.name} has successfully returned {dvd.name}"
 
     def __repr__(self):
-        return "\n".join([
-            *[str(c) for c in self.customers],
-            *[str(d) for d in self.dvds],
-        ])
+        return "\n".join(
+            [
+                *[str(c) for c in self.customers],
+                *[str(d) for d in self.dvds],
+            ]
+        )

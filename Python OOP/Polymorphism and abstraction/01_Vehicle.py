@@ -8,8 +8,7 @@ class Vehicle(ABC):  # Abstract Base Class
         self.fuel_consumption = fuel_consumption
 
     @abstractmethod
-    def drive(self, distance: float) -> None:
-        ...
+    def drive(self, distance: float) -> None: ...
 
     @abstractmethod
     def refuel(self, fuel: float) -> None:
@@ -41,4 +40,3 @@ class Truck(Vehicle):
 
     def refuel(self, fuel: float) -> None:
         self.fuel_quantity += fuel * self.TANK_PERCENTAGE_FILL
-

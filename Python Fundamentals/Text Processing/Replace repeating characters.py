@@ -7,6 +7,6 @@ for eachchar in range(len(uinput)):
         if eachchar >= len(uinput):
             break
         else:
-            if uinput[eachchar] != uinput[eachchar-1]:
+            if uinput[eachchar] != uinput[eachchar - 1]:
                 filtered_output += uinput[eachchar]
 print(filtered_output)

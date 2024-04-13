@@ -1,4 +1,5 @@
 from unittest import TestCase, main
+
 # from Car_Manager.car_manager import Car
 
 
@@ -30,7 +31,9 @@ class TestCar(TestCase):
         with self.assertRaises(Exception) as ex:
             self.car.fuel_consumption = 0
 
-        self.assertEqual("Fuel consumption cannot be zero or negative!", str(ex.exception))
+        self.assertEqual(
+            "Fuel consumption cannot be zero or negative!", str(ex.exception)
+        )
 
     def test_fuel_capacity_with_zero_raise_exception(self):
         with self.assertRaises(Exception) as ex:

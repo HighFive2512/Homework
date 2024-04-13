@@ -1,11 +1,11 @@
 class Vehicle:
-    def __init__(self,type:str,model:str,price:float):
+    def __init__(self, type: str, model: str, price: float):
         self.owner = None
         self.type = type
         self.model = model
         self.price = price
 
-    def buy(self,money:int,owner:str):
+    def buy(self, money: int, owner: str):
         if money >= self.price and self.owner == None:
             change = "{:.2f}".format(money - self.price)
             self.owner = owner
@@ -20,11 +20,14 @@ class Vehicle:
             self.owner = None
         else:
             return "Vehicle has no owner"
+
     def __repr__(self):
         if self.owner != None:
             return f"{self.model} {self.type} is owned by: {self.owner}"
         else:
             return f"{self.model} {self.type} is on sale: {self.price}"
+
+
 vehicle_type = "car"
 model = "BMW"
 price = 30000

@@ -27,7 +27,9 @@ class Group:
         return Group(f"{self.name} {other.name}", self.people + other.people)
 
     def __repr__(self):
-        return f"Group {self.name} with members {', '.join(str(p) for p in self.people)}"
+        return (
+            f"Group {self.name} with members {', '.join(str(p) for p in self.people)}"
+        )
 
     def __getitem__(self, idx: int):
         return f"Person {idx}: {str(self.people[idx])}"

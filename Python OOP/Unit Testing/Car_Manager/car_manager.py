@@ -5,11 +5,11 @@ class Car:
         self.fuel_consumption = fuel_consumption
         self.fuel_capacity = fuel_capacity
         self.fuel_amount = 0
-    
+
     @property
     def make(self):
         return self.__make
-    
+
     @make.setter
     def make(self, new_value):
         if not new_value:
@@ -20,7 +20,7 @@ class Car:
     @property
     def model(self):
         return self.__model
-    
+
     @model.setter
     def model(self, new_value):
         if not new_value:
@@ -31,7 +31,7 @@ class Car:
     @property
     def fuel_consumption(self):
         return self.__fuel_consumption
-    
+
     @fuel_consumption.setter
     def fuel_consumption(self, new_value):
         if new_value <= 0:
@@ -41,7 +41,7 @@ class Car:
     @property
     def fuel_capacity(self):
         return self.__fuel_capacity
-    
+
     @fuel_capacity.setter
     def fuel_capacity(self, new_value):
         if new_value <= 0:
@@ -51,7 +51,7 @@ class Car:
     @property
     def fuel_amount(self):
         return self.__fuel_amount
-    
+
     @fuel_amount.setter
     def fuel_amount(self, new_value):
         if new_value < 0:

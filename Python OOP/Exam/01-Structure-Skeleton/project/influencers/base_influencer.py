@@ -1,11 +1,11 @@
 class BaseInfluencer:
     def __init__(self, username: str, followers: int, engagement_rate: float):
         if not username.strip():
-            raise ValueError('Username cannot be empty or consist only of whitespace!')
+            raise ValueError("Username cannot be empty or consist only of whitespace!")
         if followers < 0:
-            raise ValueError('Followers must be a non-negative integer!')
+            raise ValueError("Followers must be a non-negative integer!")
         if not (0.0 <= engagement_rate <= 5.0):
-            raise ValueError('Engagement rate should be between 0 and 5.')
+            raise ValueError("Engagement rate should be between 0 and 5.")
 
         self.username = username
         self.followers = followers
@@ -13,10 +13,10 @@ class BaseInfluencer:
         self.campaigns_participated = []
 
     def calculate_payment(self, campaign) -> float:
-        raise NotImplementedError('Subclasses must implement calculate_payment method.')
+        raise NotImplementedError("Subclasses must implement calculate_payment method.")
 
     def reached_followers(self, campaign_type: str) -> int:
-        raise NotImplementedError('Subclasses must implement reached_followers method.')
+        raise NotImplementedError("Subclasses must implement reached_followers method.")
 
     def display_campaigns_participated(self) -> str:
         if not self.campaigns_participated:

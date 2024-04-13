@@ -58,4 +58,3 @@ def concatenate(strings):
 
 
 print(concatenate(["a" for i in range(100_000_000)]))
-

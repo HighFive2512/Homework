@@ -5,12 +5,19 @@ from project.influencers.base_influencer import BaseInfluencer
 from project.influencers.premium_influencer import PremiumInfluencer
 from project.influencers.standard_influencer import StandardInfluencer
 
+
 class InfluencerManagerApp:
     def __init__(self):
         self.influencers = []
         self.campaigns = []
 
-    def register_influencer(self, influencer_type: str, username: str, followers: int, engagement_rate: float):
+    def register_influencer(
+        self,
+        influencer_type: str,
+        username: str,
+        followers: int,
+        engagement_rate: float,
+    ):
         if influencer_type not in ["PremiumInfluencer", "StandardInfluencer"]:
             return f"{influencer_type} is not an allowed influencer type."
 
@@ -26,7 +33,13 @@ class InfluencerManagerApp:
         self.influencers.append(influencer)
         return f"{username} is successfully registered as a {influencer_type}."
 
-    def create_campaign(self, campaign_type: str, campaign_id: int, brand: str, required_engagement: float):
+    def create_campaign(
+        self,
+        campaign_type: str,
+        campaign_id: int,
+        brand: str,
+        required_engagement: float,
+    ):
         if campaign_type not in ["HighBudgetCampaign", "LowBudgetCampaign"]:
             return f"{campaign_type} is not a valid campaign type."
 
@@ -73,7 +86,11 @@ class InfluencerManagerApp:
         total_reached_followers = {}
         for campaign in self.campaigns:
             reached_followers = sum(
-                [inf.reached_followers(type(campaign).__name__) for inf in campaign.approved_influencers])
+                [
+                    inf.reached_followers(type(campaign).__name__)
+                    for inf in campaign.approved_influencers
+                ]
+            )
             if reached_followers > 0:
                 total_reached_followers[campaign] = reached_followers
         return total_reached_followers
@@ -85,11 +102,18 @@ class InfluencerManagerApp:
         return f"{username} has not participated in any campaigns."
 
     def campaign_statistics(self):
-        sorted_campaigns = sorted(self.campaigns, key=lambda x: (len(x.approved_influencers), -x.budget))
+        sorted_campaigns = sorted(
+            self.campaigns, key=lambda x: (len(x.approved_influencers), -x.budget)
+        )
         statistics = []
         for campaign in sorted_campaigns:
             total_reached_followers = sum(
-                [inf.reached_followers(type(campaign).__name__) for inf in campaign.approved_influencers])
+                [
+                    inf.reached_followers(type(campaign).__name__)
+                    for inf in campaign.approved_influencers
+                ]
+            )
             statistics.append(
-                f"  * Brand: {campaign.brand}, Total influencers: {len(campaign.approved_influencers)}, Total budget: ${campaign.budget:.2f}, Total reached followers: {total_reached_followers}")
-        return "$$ Campaign Statistics $$\n" + '\n'.join(statistics)
+                f"  * Brand: {campaign.brand}, Total influencers: {len(campaign.approved_influencers)}, Total budget: ${campaign.budget:.2f}, Total reached followers: {total_reached_followers}"
+            )
+        return "$$ Campaign Statistics $$\n" + "\n".join(statistics)

@@ -13,7 +13,7 @@ res = []
 
 while words:
     first_word = words.popleft()
-    second_word = words.pop() if words else ''
+    second_word = words.pop() if words else ""
 
     for colour in (first_word + second_word, second_word + first_word):
         if colour in colors:

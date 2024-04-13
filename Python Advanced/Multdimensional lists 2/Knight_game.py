@@ -2,17 +2,7 @@ size = int(input())
 mxt = [list(input()) for _ in range(size)]
 
 
-
-positions = (
-    (-2, -1),
-    (-2, 1),
-    (-1, -2),
-    (-1, 2),
-    (2, 1),
-    (2, -1),
-    (1, 2),
-    (1, -2)
-)
+positions = ((-2, -1), (-2, 1), (-1, -2), (-1, 2), (2, 1), (2, -1), (1, 2), (1, -2))
 
 removed_knights = 0
 

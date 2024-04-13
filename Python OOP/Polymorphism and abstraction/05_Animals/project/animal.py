@@ -10,8 +10,7 @@ class Animal(ABC):
 
     @staticmethod
     @abstractmethod
-    def make_sound() -> str:
-        ...
+    def make_sound() -> str: ...
 
     def __repr__(self):
         return f"This is {self.name}. {self.name} is a {self.age} year old {self.gender} {self.__class__.__name__}"

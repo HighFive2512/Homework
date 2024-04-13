@@ -14,7 +14,7 @@ class RedBullTeam(FormulaTeam):
             "Honda": {
                 8: 20_000,
                 10: 10_000,
-            }
+            },
         }
 
     @property

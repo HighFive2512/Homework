@@ -7,20 +7,19 @@ class IContent(ABC):
         self.text = text
 
     @abstractmethod
-    def format(self):
-        ...
+    def format(self): ...
 
 
 class MyMl(IContent):
 
     def format(self):
-        return '\n'.join(['<myML>', self.text, '</myML>'])
+        return "\n".join(["<myML>", self.text, "</myML>"])
 
 
 class HTML(IContent):
 
     def format(self):
-        return '\n'.join(['<html>', self.text, '</html>'])
+        return "\n".join(["<html>", self.text, "</html>"])
 
 
 class IEmail(ABC):
@@ -48,15 +47,15 @@ class Email(IEmail):
 
     def set_sender(self, sender):
         # TODO: fix sender
-        if self.protocol == 'IM':
-            self.__sender = ''.join(["I'm ", sender])
+        if self.protocol == "IM":
+            self.__sender = "".join(["I'm ", sender])
         else:
             self.__sender = sender
 
     def set_receiver(self, receiver):
         # TODO: fix receiver
-        if self.protocol == 'IM':
-            self.__receiver = ''.join(["I'm ", receiver])
+        if self.protocol == "IM":
+            self.__receiver = "".join(["I'm ", receiver])
         else:
             self.__receiver = receiver
 
@@ -67,14 +66,14 @@ class Email(IEmail):
 
         template = "Sender: {sender}\nReceiver: {receiver}\nContent:\n{content}"
 
-        return template.format(sender = self.__sender, receiver = self.__receiver, content = self.__content)
+        return template.format(
+            sender=self.__sender, receiver=self.__receiver, content=self.__content
+        )
 
 
-email = Email('IM')
-email.set_sender('qmal')
-email.set_receiver('james')
-content = HTML('Hello, there!')
+email = Email("IM")
+email.set_sender("qmal")
+email.set_receiver("james")
+content = HTML("Hello, there!")
 email.set_content(content)
 print(email)
-
-

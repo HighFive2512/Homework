@@ -1,9 +1,11 @@
 from math import ceil
 from typing import List
+
+
 class PhotoAlbum:
     PHOTOS_PER_PAGE: int = 4
     DASHES_COUNT: int = 11
-    SYMBOL_FOR_LINE: str = '-'
+    SYMBOL_FOR_LINE: str = "-"
 
     def __init__(self, pages: int):
         self.pages = pages
@@ -19,7 +21,9 @@ class PhotoAlbum:
                 slot = len(self.photos[page]) + 1
                 self.photos[page].append(label)
 
-                return f"{label} photo added successfully on page {page + 1} slot {slot}"
+                return (
+                    f"{label} photo added successfully on page {page + 1} slot {slot}"
+                )
 
         return "No more free slots"
 

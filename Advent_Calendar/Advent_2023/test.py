@@ -4,16 +4,22 @@ import requests
 confluence_base_url = "https://highfive2512.atlassian.net/wiki/rest/api/content"
 page_id = "98464"  # Replace with the actual page ID
 token = "aGlnaGZpdmUyNTEyQHlhaG9vLmNvbTpBVEFUVDN4RmZHRjBuWTBrSnNZb2liRHllNG54T2pzajIzaDNJT0thZEhLU212dWxzemM5T0xnY1FHbmFiV1RxMmRzSVR3SlJuX0puWG41SHlhSklPTlZUTVRKYWY1cksxTmxfeXZRRjVLdGtFSXpnVkUxTVc4VnhkZjNLZzF4MGI0YnBuTVZ4VFI2LThaSjQ4VThaMG8yN0JDLWNoUXh5dHBfUTEteURjQTRFRXVqWmd2eVFTSUk9M0VEQzNCREM="
+
+
 def get_confluence_page(page_id):
     url = f"{confluence_base_url}/{page_id}?expand=body.view"
-    headers = {'Authorization': f'Basic {token}'}
+    headers = {"Authorization": f"Basic {token}"}
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
         page_data = response.json()
         print(page_data)
-        if 'version' in page_data and 'body' in page_data and 'view' in page_data['body']:
-            return page_data['version']['number'], page_data['body']['view']['value']
+        if (
+            "version" in page_data
+            and "body" in page_data
+            and "view" in page_data["body"]
+        ):
+            return page_data["version"]["number"], page_data["body"]["view"]["value"]
         else:
             print(f"Unexpected response format. Response: {page_data}")
             return None, None
@@ -36,13 +42,10 @@ def update_confluence_page_content(page_id, current_version, new_content):
     payload = {
         "version": {"number": current_version + 1},
         "type": "page",
-        "body": {"storage": {"value": updated_content, "representation": "storage"}}
+        "body": {"storage": {"value": updated_content, "representation": "storage"}},
     }
 
-    headers = {
-        'Authorization': f'Basic {token}',
-        'Content-Type': 'application/json'
-    }
+    headers = {"Authorization": f"Basic {token}", "Content-Type": "application/json"}
 
     response = requests.put(url, json=payload, headers=headers)
 

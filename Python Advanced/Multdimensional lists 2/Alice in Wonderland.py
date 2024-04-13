@@ -4,17 +4,17 @@ mxt = []
 alice_pos = []
 tea_bags = 0
 directions = {
-    'up': (-1, 0),
-    'down': (1, 0),
-    'left': (0, -1),
-    'right': (0, 1),
+    "up": (-1, 0),
+    "down": (1, 0),
+    "left": (0, -1),
+    "right": (0, 1),
 }
 for row in range(size):
     mxt.append(input().split())
 
-    if 'A' in mxt[row]:
-        alice_pos = [row, mxt[row].index('A')]
-        mxt[row][alice_pos[1]] = '*'  
+    if "A" in mxt[row]:
+        alice_pos = [row, mxt[row].index("A")]
+        mxt[row][alice_pos[1]] = "*"
 
 while tea_bags < 10:
     direction = input()
@@ -27,9 +27,9 @@ while tea_bags < 10:
 
     alice_pos = [row, col]
     pos = mxt[row][col]
-    mxt[row][col] = '*'
+    mxt[row][col] = "*"
 
-    if pos == 'R':
+    if pos == "R":
         break
 
     if pos.isdigit():
@@ -40,4 +40,4 @@ if tea_bags < 10:
 else:
     print("She did it! She went to the party.")
 
-print(*[' '.join(row) for row in mxt], sep='\n')
+print(*[" ".join(row) for row in mxt], sep="\n")

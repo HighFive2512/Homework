@@ -1,15 +1,15 @@
 from collections import deque
-from datetime import datetime,timedelta
+from datetime import datetime, timedelta
 
 
 robos = {}
 products = deque()
 
 for each_robot in input().split(";"):
-    name,req_time = each_robot.split("-")
-    robos[name] = [int(req_time),0]
+    name, req_time = each_robot.split("-")
+    robos[name] = [int(req_time), 0]
 
-processing_time = datetime.strptime(input(),'%H:%M:%S')
+processing_time = datetime.strptime(input(), "%H:%M:%S")
 
 while True:
     product = input()
@@ -29,7 +29,7 @@ while products:
         if val[1] != 0:
             robos[rob_name][1] -= 1
         if val[1] == 0:
-            available_robots.append([rob_name,val])
+            available_robots.append([rob_name, val])
 
     if not available_robots:
         products.append(product)

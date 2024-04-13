@@ -24,7 +24,7 @@ class store_result:
 
 
 # with param not defined by task
-class store_result_in_file_name():
+class store_result_in_file_name:
     _DIR = "files"
 
     def __init__(self, file_name: str):  # here goes the param

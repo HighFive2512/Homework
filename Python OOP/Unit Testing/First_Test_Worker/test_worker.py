@@ -5,11 +5,7 @@ from First_Test_Worker.worker import Worker
 class TestWorker(TestCase):
 
     def setUp(self):  # runs before each test case
-        self.worker = Worker(
-            "TestGuy",
-            25_000,
-            100
-        )
+        self.worker = Worker("TestGuy", 25_000, 100)
 
     def test_correct_init(self):
         self.assertEqual("TestGuy", self.worker.name)
@@ -17,7 +13,9 @@ class TestWorker(TestCase):
         self.assertEqual(100, self.worker.energy)
         self.assertEqual(0, self.worker.money)
 
-    def test_work_when_worker_has_energy_expect_money_increase_and_energy_decrease(self):
+    def test_work_when_worker_has_energy_expect_money_increase_and_energy_decrease(
+        self,
+    ):
         expected_money = self.worker.salary * 2
         expected_energy = self.worker.energy - 2
 
@@ -33,7 +31,7 @@ class TestWorker(TestCase):
         with self.assertRaises(Exception) as ex:
             self.worker.work()  # Act
 
-        self.assertEqual('Not enough energy.', str(ex.exception))  # Assert
+        self.assertEqual("Not enough energy.", str(ex.exception))  # Assert
 
     def test_rest_increases_energy_with_one(self):
         expected_energy = self.worker.energy + 1
@@ -43,7 +41,7 @@ class TestWorker(TestCase):
         self.assertEqual(expected_energy, self.worker.energy)
 
     def test_get_info_returns_correct_string(self):
-        self.assertEqual(f'TestGuy has saved 0 money.', self.worker.get_info())
+        self.assertEqual(f"TestGuy has saved 0 money.", self.worker.get_info())
 
 
 if __name__ == "__main__":

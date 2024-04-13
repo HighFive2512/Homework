@@ -6,6 +6,7 @@ import requests
 from io import BytesIO
 from PIL import ImageTk, Image
 
+
 def display_image(image_url: str) -> None:
     with urllib.request.urlopen(image_url) as url:
         image_data = url.read()
@@ -18,22 +19,20 @@ def display_image(image_url: str) -> None:
 
 
 def get_image_url() -> str:
-    headers = {
-        "Authorization": "YOUR API KEY"
-    }
+    headers = {"Authorization": "YOUR API KEY"}
 
     url = "https://api.edenai.run/v2/image/generation"
     payload = {
         "providers": "openai",
         "text": input.get(),
         "resolution": "256x256",
-        "fallback_providers": ""
+        "fallback_providers": "",
     }
 
     response = requests.post(url, json=payload, headers=headers)
     result = json.loads(response.text)
 
-    return result['openai']['items'][0]["image_resource_url"]
+    return result["openai"]["items"][0]["image_resource_url"]
 
 
 def render_image():

@@ -1,5 +1,6 @@
 from .base_influencer import BaseInfluencer
 
+
 class PremiumInfluencer(BaseInfluencer):
     def __init__(self, username: str, followers: int, engagement_rate: float):
         super().__init__(username, followers, engagement_rate)

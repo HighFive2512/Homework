@@ -36,8 +36,12 @@ class Gym:
             self.trainers.append(trainer)
 
     def subscription_info(self, subscription_id: int) -> str:
-        subscription = next(filter(lambda s: s.id == subscription_id, self.subscriptions))
-        customer = next(filter(lambda c: c.id == subscription.customer_id, self.customers))
+        subscription = next(
+            filter(lambda s: s.id == subscription_id, self.subscriptions)
+        )
+        customer = next(
+            filter(lambda c: c.id == subscription.customer_id, self.customers)
+        )
         trainer = next(filter(lambda t: t.id == subscription.trainer_id, self.trainers))
         plan = next(filter(lambda p: p.id == subscription.exercise_id, self.plans))
         equipment = next(filter(lambda e: e.id == plan.equipment_id, self.equipment))

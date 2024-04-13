@@ -16,4 +16,5 @@ def type_check(expected_type):
 def sum_numbers(a, b):
     return a + b
 
+
 print(sum_numbers(5, 6.5))

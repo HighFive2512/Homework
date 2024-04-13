@@ -1,19 +1,21 @@
 from abc import ABC, abstractmethod
 
+
 class Car(ABC):
     pass
+
 
 class Fuel(ABC):
 
     @abstractmethod
-    def refuel(self):
-        ...
+    def refuel(self): ...
+
 
 class Charge(ABC):
 
     @abstractmethod
-    def charge(self):
-        ...
+    def charge(self): ...
+
 
 class CarWithCombustionEngine(Car, Fuel):
 

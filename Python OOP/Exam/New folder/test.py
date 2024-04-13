@@ -1,4 +1,3 @@
-
 from project.influencer_manager_app import InfluencerManagerApp
 
 manager = InfluencerManagerApp()

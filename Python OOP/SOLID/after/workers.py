@@ -5,8 +5,7 @@ class BaseWorker(ABC):
 
     @staticmethod
     @abstractmethod
-    def work() -> None:
-        ...
+    def work() -> None: ...
 
 
 class Worker(BaseWorker):
@@ -33,7 +32,7 @@ class Manager:
         self.worker = None
 
     def set_worker(self, worker):
-        assert isinstance(worker, BaseWorker), f'`worker` must be of type {Worker}'
+        assert isinstance(worker, BaseWorker), f"`worker` must be of type {Worker}"
 
         self.worker = worker
 

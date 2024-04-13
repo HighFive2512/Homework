@@ -1,11 +1,13 @@
 from project.song import Song
+
+
 class Album:
-    def __init__(self,name:str,*songs):
+    def __init__(self, name: str, *songs):
         self.name = name
         self.songs = [*songs]
         self.published = False
 
-    def add_song(self,song:Song) -> str:
+    def add_song(self, song: Song) -> str:
         if song.single == True:
             return f"Cannot add {song.name}. It's a single"
         if self.published == True:
@@ -15,7 +17,7 @@ class Album:
         self.songs.append(song)
         return f"Song {song.name} has been added to the album {self.name}."
 
-    def remove_song(self,song_name:str) -> str:
+    def remove_song(self, song_name: str) -> str:
         try:
             song = next(filter(lambda s: s.name == song_name, self.songs))
         except StopIteration:
@@ -34,5 +36,5 @@ class Album:
         return f"Album {self.name} has been published."
 
     def details(self):
-        song_details = '\n'.join(f"== {s.get_info()}" for s in self.songs)
-        return f'Album {self.name}\n{song_details}\n'
+        song_details = "\n".join(f"== {s.get_info()}" for s in self.songs)
+        return f"Album {self.name}\n{song_details}\n"

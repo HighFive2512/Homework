@@ -4,15 +4,13 @@ from abc import ABC, abstractmethod
 class Workable(ABC):
 
     @abstractmethod
-    def work(self):
-        ...
+    def work(self): ...
 
 
 class Eatable(ABC):
 
     @abstractmethod
-    def eat(self):
-        ...
+    def eat(self): ...
 
 
 class Worker(Workable, Eatable):
@@ -51,8 +49,7 @@ class BaseManager(ABC):
         self.worker = None
 
     @abstractmethod
-    def set_worker(self, worker):
-        ...
+    def set_worker(self, worker): ...
 
 
 class WorkManager(BaseManager):

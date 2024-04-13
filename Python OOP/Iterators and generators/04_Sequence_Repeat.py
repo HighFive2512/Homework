@@ -17,6 +17,6 @@ class sequence_repeat:
         return self.sequence[self.idx % len(self.sequence)]
 
 
-result = sequence_repeat('abc', 5)
+result = sequence_repeat("abc", 5)
 for item in result:
-    print(item, end ='')
+    print(item, end="")

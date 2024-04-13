@@ -1,7 +1,9 @@
 class dictionary_iter:
 
     def __init__(self, dictionary: dict):  # {1: "1", 2: "2"}
-        self.items = list(dictionary.items())  # dictionary.items() => dict_items([(1, "1"), (2, "2")])
+        self.items = list(
+            dictionary.items()
+        )  # dictionary.items() => dict_items([(1, "1"), (2, "2")])
         self.index: int = -1
 
     def __iter__(self):
@@ -19,7 +21,9 @@ class dictionary_iter:
 #  not passing in judge but still correct
 class dictionary_iterator:
     def __init__(self, dictionary: dict):  # {1: "1", 2: "2"}
-        self.items = dictionary.items() # dictionary.items() => dict_items([(1, "1"), (2, "2")])
+        self.items = (
+            dictionary.items()
+        )  # dictionary.items() => dict_items([(1, "1"), (2, "2")])
 
     def __iter__(self):
         return iter(self.items)

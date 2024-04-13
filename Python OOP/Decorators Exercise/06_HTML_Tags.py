@@ -8,9 +8,9 @@ def tags(tag: str):
     return decorator
 
 
-@tags('body')
-@tags('div')
-@tags('p')
+@tags("body")
+@tags("div")
+@tags("p")
 def say_hi():
     return "Hello"
 

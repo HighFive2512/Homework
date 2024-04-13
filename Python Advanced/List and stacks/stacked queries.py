@@ -19,4 +19,4 @@ for eachiter in range(iterations):
 
 while stacked_query:
     res.append(stacked_query.pop())
-print(*res,sep=", ")
+print(*res, sep=", ")

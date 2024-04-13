@@ -1,4 +1,3 @@
-
 total_food_qty = int(input())
 orders = input()
 orders = [int(i) for i in orders.split(" ")]
@@ -17,6 +16,6 @@ while iter < total_orders:
 
 print(highest_order)
 if len(orders) == 0:
-    print('Orders complete')
+    print("Orders complete")
 else:
     print(f'Orders left: {" ".join(map(str, orders))}')

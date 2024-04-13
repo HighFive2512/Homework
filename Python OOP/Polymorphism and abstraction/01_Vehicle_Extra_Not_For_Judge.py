@@ -8,8 +8,7 @@ class Vehicle(ABC):  # Abstract Base Class
 
     @property
     @abstractmethod
-    def conditioner_on(self) -> float:
-        ...
+    def conditioner_on(self) -> float: ...
 
     def drive(self, distance: float) -> None:
         consumption = (self.conditioner_on + self.fuel_consumption) * distance

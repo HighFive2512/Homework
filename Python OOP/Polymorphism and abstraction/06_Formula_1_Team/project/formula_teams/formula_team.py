@@ -10,13 +10,11 @@ class FormulaTeam(ABC):
 
     @property
     @abstractmethod
-    def sponsors(self):
-        ...
+    def sponsors(self): ...
 
     @property
     @abstractmethod
-    def expenses_for_one_race(self) -> int:
-        ...
+    def expenses_for_one_race(self) -> int: ...
 
     @property
     def budget(self):
@@ -32,7 +30,11 @@ class FormulaTeam(ABC):
     def calculate_revenue_after_race(self, race_pos: int):
         revenue: int = 0
 
-        for sponsor in self.sponsors.values():  # [{1: 1_500_000, 2: 800_000}, {8: 20_000, 10: 10_000}]
+        for (
+            sponsor
+        ) in (
+            self.sponsors.values()
+        ):  # [{1: 1_500_000, 2: 800_000}, {8: 20_000, 10: 10_000}]
             for pos in sponsor:  # {1: 1_500_000, 2: 800_000} - should be sorted
                 if race_pos <= pos:
                     revenue += sponsor[pos]
@@ -41,4 +43,6 @@ class FormulaTeam(ABC):
         revenue -= self.expenses_for_one_race
         self.budget += revenue
 
-        return f"The revenue after the race is {revenue}$. Current budget {self.budget}$"
+        return (
+            f"The revenue after the race is {revenue}$. Current budget {self.budget}$"
+        )

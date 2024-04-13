@@ -1,4 +1,6 @@
-First,Second = set(int(x) for x in input().split(" ")),set(int(x) for x in input().split(" "))
+First, Second = set(int(x) for x in input().split(" ")), set(
+    int(x) for x in input().split(" ")
+)
 
 for each_opertaion in range(int(input())):
     uinput = input().split(" ")
@@ -13,5 +15,5 @@ for each_opertaion in range(int(input())):
                 tar_var.remove(int(eachnum))
     if uinput[0] == "Check":
         print(Second <= First)
-print(*sorted(First),sep=", ")
-print(*sorted(Second),sep=", ")
+print(*sorted(First), sep=", ")
+print(*sorted(Second), sep=", ")

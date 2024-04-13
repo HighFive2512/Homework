@@ -13,18 +13,15 @@ class Animal(ABC):
 
     @property
     @abstractmethod
-    def food_that_eats(self):
-        ...
+    def food_that_eats(self): ...
 
     @property
     @abstractmethod
-    def gained_weight(self) -> float:
-        ...
+    def gained_weight(self) -> float: ...
 
     @staticmethod
     @abstractmethod
-    def make_sound() -> str:
-        ...
+    def make_sound() -> str: ...
 
     def feed(self, food: Food) -> str or None:
         if type(food) not in self.food_that_eats:

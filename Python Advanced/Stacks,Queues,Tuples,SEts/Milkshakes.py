@@ -19,10 +19,10 @@ while shakes != 5 and chocos and cups:
         continue
 
     if cup == choco:
-        shakes +=1
+        shakes += 1
     else:
         cups.append(cup)
-        chocos.append(choco-5)
+        chocos.append(choco - 5)
 if shakes == 5:
     print("Great! You made all the chocolate milkshakes needed!")
 else:
@@ -30,6 +30,3 @@ else:
 
 print(f"Chocolate: {', '.join(str(x) for x in chocos) or 'empty'}")
 print(f"Milk: {', '.join(str(x) for x in cups) or 'empty'}")
-
-
-
